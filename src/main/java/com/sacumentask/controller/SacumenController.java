@@ -1,5 +1,6 @@
 package com.sacumentask.controller;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,9 +21,9 @@ public class SacumenController {
 	private SacumenServices sacumenServices;
 
 	@GetMapping("/get-all-jobs")
-	public Optional<?> getAllJobs() {
+	public List<?> getAllJobs() {
 		log.info("Request intercepted by the controller");
 
-		return Optional.ofNullable(sacumenServices.getAlljobs());
+		return sacumenServices.getAlljobs();
 	}
 }
